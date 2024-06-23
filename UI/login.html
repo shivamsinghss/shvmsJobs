@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div id="form-ui">
+        <form id="form">
+            <div id="form-body">
+                <div id="welcome-lines">
+                    <div id="welcome-line-1">shvmsJobs</div>
+                    <div id="welcome-line-2">Welcome Back</div>
+                </div>
+                <div id="input-area">
+                    <div class="form-inp">
+                        <input id="email" placeholder="Username" type="text">
+                    </div>
+                    <div class="form-inp">
+                        <input id="password" placeholder="Password" type="password">
+                    </div>
+                </div>
+                <div id="submit-button-cvr">
+                    <button id="login-button" type="button" onclick="loginUser()">Login</button>
+                </div>
+                <div id="submit-button-cvr">
+                    <button id="login-button" type="button" onclick="redirectToPage('register.html');">New User? Register Now!!</button>
+                </div>
+                <div id="forgot-pass">
+                    <a href="#">Forgot password?</a>
+                </div>
+                <div id="message"></div>
+            </div>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
