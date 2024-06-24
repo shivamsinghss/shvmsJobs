@@ -1,5 +1,6 @@
 package com.shvmsJobs.service.impl;
 
+import com.shvmsJobs.model.AdditionalInformation;
 import com.shvmsJobs.model.User;
 import com.shvmsJobs.service.UserService;
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ public class UserServiceImpl implements UserService {
             return "User already exists!";
         }
         userMap.put(user.getUsername(), user);
+        logger.info("New User added with details:::::::{}",user);
         return "User registered successfully!";
     }
 
@@ -32,6 +34,7 @@ public class UserServiceImpl implements UserService {
         if (!user.getPassword().equals(password)) {
             return "Invalid credentials!";
         }
+        logger.info("Successfully Logged in as:::::::{} with details::::{}",username,user);
         return "Login successful!";
     }
 
@@ -40,4 +43,15 @@ public class UserServiceImpl implements UserService {
         logger.info("userMap:::::::{}",userMap);
         return userMap.get(username);
     }
+
+    @Override
+    public User saveAdditionalInformation(AdditionalInformation additionalInformation) {
+        User user=userMap.get(additionalInformation.getUsername());
+        user.setAdditionalInformation(additionalInformation);
+        userMap.put(additionalInformation.getUsername(), user);
+        logger.info("updated userMap:::::::{}",userMap);
+        return user;
+    }
+
+
 }

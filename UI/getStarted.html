@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <link rel="stylesheet" href="getStarted.css">
+</head>
+<body>
+    <div class="form-container">
+        <form class="form" id="user-info-form">
+            <div class="form-page" id="page-1">
+                <h2>Education Details</h2>
+                <div id="education-container">
+                    <div class="education-group">
+                        <div class="form-group">
+                            <label for="degreeName">Degree Name:</label>
+                            <input type="text" class="degreeName" placeholder="Enter your degree name">
+                        </div>
+                        <div class="form-group">
+                            <label for="institutionName">Institution Name:</label>
+                            <input type="text" class="institutionName" placeholder="Enter your institution name">
+                        </div>
+                        <div class="form-group">
+                            <label for="yearOfPassing">Year of Passing:</label>
+                            <input type="text" class="yearOfPassing" placeholder="Enter your year of passing">
+                        </div>
+                        <div class="form-group">
+                            <label for="percentage">Percentage:</label>
+                            <input type="text" class="percentage" placeholder="Enter your percentage">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" onclick="addEducation()">Add More Education</button>
+                <button type="button" class="form-next-btn" onclick="nextPage()">Next</button>
+            </div>
+            <div class="form-page" id="page-2" style="display: none;">
+                <h2>Job Specific Information</h2>
+                <div class="form-group">
+                    <label for="jobTitle">Job Title:</label>
+                    <input type="text" id="jobTitle" placeholder="Enter your job title">
+                </div>
+                <div class="form-group">
+                    <label for="preferredLocation">Preferred Location:</label>
+                    <input type="text" id="preferredLocation" placeholder="Enter your preferred location">
+                </div>
+                <div class="form-group">
+                    <label for="salary">Salary:</label>
+                    <select id="salary">
+                        <option value=">10000">&gt;10000</option>
+                        <option value=">20000">&gt;20000</option>
+                        <option value=">30000">&gt;30000</option>
+                        <option value=">40000">&gt;40000</option>
+                        <option value=">50000">&gt;50000</option>
+                    </select>
+                </div>
+                <button type="button" class="form-prev-btn" onclick="prevPage()">Previous</button>
+                <button type="button" class="form-submit-btn" onclick="submitForm()">Submit</button>
+                
+    <div id="success-message"></div> 
+            </div>
+        </form>
+    </div>
+    <script src="getStarted.js"></script>
+</body>
+</html>

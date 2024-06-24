@@ -1,5 +1,6 @@
 package com.shvmsJobs.controller;
 
+import com.shvmsJobs.model.AdditionalInformation;
 import com.shvmsJobs.model.User;
 import com.shvmsJobs.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +30,14 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/{username}")
-    public ResponseEntity<User> getUserDetails(@PathVariable String username) {
-        User user = userService.getUserDetails(username);
+    @PostMapping("/details")
+    public User getUserDetails(@RequestBody AdditionalInformation additionalInformation) {
+        User user = userService.getUserDetails(additionalInformation.getUsername());
         if (user == null) {
-            return ResponseEntity.notFound().build();
+            throw new RuntimeException("No such user found");
         }
-        return ResponseEntity.ok(user);
+        return userService.saveAdditionalInformation(additionalInformation);
     }
+
 }
 
